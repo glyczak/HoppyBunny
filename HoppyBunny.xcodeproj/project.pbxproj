@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		151A44641E81485600B37E93 /* SFX in Resources */ = {isa = PBXBuildFile; fileRef = 151A44631E81485600B37E93 /* SFX */; };
+		151A446C1E81EF1200B37E93 /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A446B1E81EF1200B37E93 /* CGFloat+Extensions.swift */; };
+		151A446E1E81F5E500B37E93 /* SFX in Resources */ = {isa = PBXBuildFile; fileRef = 151A446D1E81F5E500B37E93 /* SFX */; };
 		333403231E815BBD009FF056 /* Hero.sks in Resources */ = {isa = PBXBuildFile; fileRef = 333403221E815BBD009FF056 /* Hero.sks */; };
 		339AF64D1E8011210070E8AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339AF64C1E8011210070E8AA /* AppDelegate.swift */; };
 		339AF64F1E8011210070E8AA /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 339AF64E1E8011210070E8AA /* GameScene.sks */; };
@@ -20,7 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		151A44631E81485600B37E93 /* SFX */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SFX; sourceTree = "<group>"; };
+		151A446B1E81EF1200B37E93 /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
+		151A446D1E81F5E500B37E93 /* SFX */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SFX; sourceTree = "<group>"; };
 		333403221E815BBD009FF056 /* Hero.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hero.sks; sourceTree = "<group>"; };
 		339AF6491E8011210070E8AA /* HoppyBunny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoppyBunny.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		339AF64C1E8011210070E8AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,12 +71,13 @@
 				339AF6501E8011210070E8AA /* Actions.sks */,
 				339AF6521E8011210070E8AA /* GameScene.swift */,
 				339AF6541E8011210070E8AA /* GameViewController.swift */,
+				151A446B1E81EF1200B37E93 /* CGFloat+Extensions.swift */,
 				339AF6561E8011210070E8AA /* Main.storyboard */,
 				339AF6591E8011210070E8AA /* Assets.xcassets */,
 				333403221E815BBD009FF056 /* Hero.sks */,
 				339AF65B1E8011210070E8AA /* LaunchScreen.storyboard */,
 				339AF65E1E8011210070E8AA /* Info.plist */,
-				151A44631E81485600B37E93 /* SFX */,
+				151A446D1E81F5E500B37E93 /* SFX */,
 			);
 			path = HoppyBunny;
 			sourceTree = "<group>";
@@ -138,8 +141,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				151A44641E81485600B37E93 /* SFX in Resources */,
 				339AF6581E8011210070E8AA /* Main.storyboard in Resources */,
+				151A446E1E81F5E500B37E93 /* SFX in Resources */,
 				339AF64F1E8011210070E8AA /* GameScene.sks in Resources */,
 				333403231E815BBD009FF056 /* Hero.sks in Resources */,
 				339AF65A1E8011210070E8AA /* Assets.xcassets in Resources */,
@@ -157,6 +160,7 @@
 			files = (
 				339AF6531E8011210070E8AA /* GameScene.swift in Sources */,
 				339AF6551E8011210070E8AA /* GameViewController.swift in Sources */,
+				151A446C1E81EF1200B37E93 /* CGFloat+Extensions.swift in Sources */,
 				339AF64D1E8011210070E8AA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
