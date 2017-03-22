@@ -10,6 +10,7 @@
 		151A446C1E81EF1200B37E93 /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A446B1E81EF1200B37E93 /* CGFloat+Extensions.swift */; };
 		151A446E1E81F5E500B37E93 /* SFX in Resources */ = {isa = PBXBuildFile; fileRef = 151A446D1E81F5E500B37E93 /* SFX */; };
 		151A44701E82958900B37E93 /* Obstacle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 151A446F1E82958900B37E93 /* Obstacle.sks */; };
+		151A44721E829D4C00B37E93 /* MSButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A44711E829D4C00B37E93 /* MSButtonNode.swift */; };
 		333403231E815BBD009FF056 /* Hero.sks in Resources */ = {isa = PBXBuildFile; fileRef = 333403221E815BBD009FF056 /* Hero.sks */; };
 		339AF64D1E8011210070E8AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339AF64C1E8011210070E8AA /* AppDelegate.swift */; };
 		339AF64F1E8011210070E8AA /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 339AF64E1E8011210070E8AA /* GameScene.sks */; };
@@ -25,6 +26,7 @@
 		151A446B1E81EF1200B37E93 /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
 		151A446D1E81F5E500B37E93 /* SFX */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SFX; sourceTree = "<group>"; };
 		151A446F1E82958900B37E93 /* Obstacle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Obstacle.sks; sourceTree = "<group>"; };
+		151A44711E829D4C00B37E93 /* MSButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSButtonNode.swift; sourceTree = "<group>"; };
 		333403221E815BBD009FF056 /* Hero.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hero.sks; sourceTree = "<group>"; };
 		339AF6491E8011210070E8AA /* HoppyBunny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoppyBunny.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		339AF64C1E8011210070E8AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,12 +74,13 @@
 				339AF64E1E8011210070E8AA /* GameScene.sks */,
 				151A446F1E82958900B37E93 /* Obstacle.sks */,
 				339AF6501E8011210070E8AA /* Actions.sks */,
+				333403221E815BBD009FF056 /* Hero.sks */,
 				339AF6521E8011210070E8AA /* GameScene.swift */,
 				339AF6541E8011210070E8AA /* GameViewController.swift */,
 				151A446B1E81EF1200B37E93 /* CGFloat+Extensions.swift */,
+				151A44711E829D4C00B37E93 /* MSButtonNode.swift */,
 				339AF6561E8011210070E8AA /* Main.storyboard */,
 				339AF6591E8011210070E8AA /* Assets.xcassets */,
-				333403221E815BBD009FF056 /* Hero.sks */,
 				339AF65B1E8011210070E8AA /* LaunchScreen.storyboard */,
 				339AF65E1E8011210070E8AA /* Info.plist */,
 				151A446D1E81F5E500B37E93 /* SFX */,
@@ -166,6 +169,7 @@
 				339AF6551E8011210070E8AA /* GameViewController.swift in Sources */,
 				151A446C1E81EF1200B37E93 /* CGFloat+Extensions.swift in Sources */,
 				339AF64D1E8011210070E8AA /* AppDelegate.swift in Sources */,
+				151A44721E829D4C00B37E93 /* MSButtonNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
