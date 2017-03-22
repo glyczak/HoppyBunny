@@ -8,7 +8,14 @@
 
 import SpriteKit
 
-class GameScene: SKScene {
+enum GameSceneState {
+    case Active, GameOver
+}
+
+class GameScene: SKScene, SKPhysicsContactDelegate {
+    
+    /* Game management */
+    var gameState: GameSceneState = .Active
     
     var sinceTouch : TimeInterval = 0
     var spawnTimer: TimeInterval = 0
@@ -19,6 +26,9 @@ class GameScene: SKScene {
     
     let scrollSpeed: CGFloat = 160
     let fixedDelta: TimeInterval = 1.0/60.0 /* 60 FPS */
+    
+    /* UI Connections */
+    var buttonRestart: MSButtonNode!
     
     override func didMove(to view: SKView) {
         /* Set up your scene here */
@@ -31,6 +41,32 @@ class GameScene: SKScene {
         
         /* Set reference to obstacle layer node */
         obstacleLayer = self.childNode(withName: "obstacleLayer")
+        
+        /* Set physics contact delegate */
+        physicsWorld.contactDelegate = self
+        
+        /* Set UI connections */
+        buttonRestart = self.childNode(withName: "buttonRestart") as! MSButtonNode
+        
+        /* Setup restart button selection handler */
+        buttonRestart.selectedHandler = { [unowned self] in
+            
+            /* Grab reference to our SpriteKit view */
+            let skView = self.view as SKView!
+            
+            /* Load Game scene */
+            let scene = GameScene(fileNamed:"GameScene") as GameScene!
+            
+            /* Ensure correct aspect mode */
+            scene?.scaleMode = .aspectFill
+            
+            /* Restart game scene */
+            skView?.presentScene(scene)
+            
+        }
+        
+        /* Hide restart button */
+        buttonRestart.state = .hidden
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -80,6 +116,11 @@ class GameScene: SKScene {
         /* Process obstacles */
         updateObstacles()
         spawnTimer += fixedDelta
+    }
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        /* Hero touches anything, game over */
+        print("TODO: Add contact code")
     }
     
     func updateObstacles() {
