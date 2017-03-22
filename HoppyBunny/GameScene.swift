@@ -72,6 +72,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         /* Called when a touch begins */
         
+        /* Disable touch if game state is not active */
+        if gameState != .Active { return }
+        
         /* Apply vertical impulse */
         hero.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 250))
         
@@ -88,6 +91,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func update(_ currentTime: TimeInterval) {
         /* Called before each frame is rendered */
+        
+        /* Skip game update if game no longer active */
+        if gameState != .Active { return }
         
         /* Grab current velocity */
         let velocityY = hero.physicsBody?.velocity.dy ?? 0
@@ -119,8 +125,37 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
+        /* Ensure only called while game running */
+        if gameState != .Active { return }
+        
         /* Hero touches anything, game over */
-        print("TODO: Add contact code")
+        
+        /* Change game state to game over */
+        gameState = .GameOver
+        
+        /* Stop any new angular velocity being applied */
+        hero.physicsBody?.allowsRotation = false
+        
+        /* Reset angular velocity */
+        hero.physicsBody?.angularVelocity = 0
+        
+        /* Stop hero flapping animation */
+        hero.removeAllActions()
+        
+        /* Show restart button */
+        buttonRestart.state = .active
+        
+        /* Create our hero death action */
+        let heroDeath = SKAction.run({
+            
+            /* Put our hero face down in the dirt */
+            self.hero.zRotation = CGFloat(-90).degreesToRadians()
+            /* Stop hero from colliding with anything else */
+            self.hero.physicsBody?.collisionBitMask = 0
+        })
+        
+        /* Run action */
+        hero.run(heroDeath)
     }
     
     func updateObstacles() {
