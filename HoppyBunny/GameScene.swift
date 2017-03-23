@@ -19,10 +19,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var sinceTouch : TimeInterval = 0
     var spawnTimer: TimeInterval = 0
+    var points = 0
     
     var hero: SKSpriteNode!
     var scrollLayer: SKNode!
     var obstacleLayer: SKNode!
+    var scoreLabel: SKLabelNode!
     
     let scrollSpeed: CGFloat = 160
     let fixedDelta: TimeInterval = 1.0/60.0 /* 60 FPS */
@@ -41,6 +43,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         /* Set reference to obstacle layer node */
         obstacleLayer = self.childNode(withName: "obstacleLayer")
+        
+        scoreLabel = self.childNode(withName: "scoreLabel") as! SKLabelNode
+        
+        /* Reset Score label */
+        scoreLabel.text = String(points)
         
         /* Set physics contact delegate */
         physicsWorld.contactDelegate = self
@@ -74,6 +81,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         /* Disable touch if game state is not active */
         if gameState != .Active { return }
+        
+        /* Reset velocity, helps improve response against cumulative falling velocity */
+        hero.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
         
         /* Apply vertical impulse */
         hero.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 250))
@@ -128,10 +138,33 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         /* Ensure only called while game running */
         if gameState != .Active { return }
         
+        /* Get references to bodies involved in collision */
+        let contactA:SKPhysicsBody = contact.bodyA
+        let contactB:SKPhysicsBody = contact.bodyB
+        
+        /* Get references to the physics body parent nodes */
+        let nodeA = contactA.node!
+        let nodeB = contactB.node!
+        
+        /* Did our hero pass through the 'goal'? */
+        if nodeA.name == "goal" || nodeB.name == "goal" {
+            
+            /* Increment points */
+            points += 1
+            
+            /* Update score label */
+            scoreLabel.text = String(points)
+            
+            /* We can return now */
+            return
+        }
+        
         /* Hero touches anything, game over */
         
         /* Change game state to game over */
         gameState = .GameOver
+        
+        
         
         /* Stop any new angular velocity being applied */
         hero.physicsBody?.allowsRotation = false
@@ -156,6 +189,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         /* Run action */
         hero.run(heroDeath)
+        
+        /* Load the shake action resource */
+        let shakeScene:SKAction = SKAction.init(named: "Shake")!
+        
+        /* Loop through all nodes  */
+        for node in self.children {
+            
+            /* Apply effect each ground node */
+            node.run(shakeScene)
+        }
     }
     
     func updateObstacles() {

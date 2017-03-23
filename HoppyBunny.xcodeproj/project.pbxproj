@@ -11,6 +11,7 @@
 		151A446E1E81F5E500B37E93 /* SFX in Resources */ = {isa = PBXBuildFile; fileRef = 151A446D1E81F5E500B37E93 /* SFX */; };
 		151A44701E82958900B37E93 /* Obstacle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 151A446F1E82958900B37E93 /* Obstacle.sks */; };
 		151A44721E829D4C00B37E93 /* MSButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 151A44711E829D4C00B37E93 /* MSButtonNode.swift */; };
+		151A44741E83E73800B37E93 /* CameraEffects.sks in Resources */ = {isa = PBXBuildFile; fileRef = 151A44731E83E73800B37E93 /* CameraEffects.sks */; };
 		333403231E815BBD009FF056 /* Hero.sks in Resources */ = {isa = PBXBuildFile; fileRef = 333403221E815BBD009FF056 /* Hero.sks */; };
 		339AF64D1E8011210070E8AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339AF64C1E8011210070E8AA /* AppDelegate.swift */; };
 		339AF64F1E8011210070E8AA /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 339AF64E1E8011210070E8AA /* GameScene.sks */; };
@@ -27,6 +28,7 @@
 		151A446D1E81F5E500B37E93 /* SFX */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SFX; sourceTree = "<group>"; };
 		151A446F1E82958900B37E93 /* Obstacle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Obstacle.sks; sourceTree = "<group>"; };
 		151A44711E829D4C00B37E93 /* MSButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSButtonNode.swift; sourceTree = "<group>"; };
+		151A44731E83E73800B37E93 /* CameraEffects.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CameraEffects.sks; sourceTree = "<group>"; };
 		333403221E815BBD009FF056 /* Hero.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Hero.sks; sourceTree = "<group>"; };
 		339AF6491E8011210070E8AA /* HoppyBunny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoppyBunny.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		339AF64C1E8011210070E8AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				339AF6521E8011210070E8AA /* GameScene.swift */,
 				339AF6541E8011210070E8AA /* GameViewController.swift */,
 				151A446B1E81EF1200B37E93 /* CGFloat+Extensions.swift */,
+				151A44731E83E73800B37E93 /* CameraEffects.sks */,
 				151A44711E829D4C00B37E93 /* MSButtonNode.swift */,
 				339AF6561E8011210070E8AA /* Main.storyboard */,
 				339AF6591E8011210070E8AA /* Assets.xcassets */,
@@ -154,6 +157,7 @@
 				333403231E815BBD009FF056 /* Hero.sks in Resources */,
 				339AF65A1E8011210070E8AA /* Assets.xcassets in Resources */,
 				339AF65D1E8011210070E8AA /* LaunchScreen.storyboard in Resources */,
+				151A44741E83E73800B37E93 /* CameraEffects.sks in Resources */,
 				339AF6511E8011210070E8AA /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
